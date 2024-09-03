@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>rfx</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="shortcut icon" type="rfx" href="img/iconweb.png">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+  <!-- WhatsApp Floating Button -->
+<div class="whatsapp-button">
+  <a href="https://wa.me/+6289627808306" target="_blank">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+</div>
+
+
+  <style>
+    
+     body{  
+      font-family: 'poppins';
+      font-weight: 500;
+     }
+     .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            font-size: 1.8rem;
+        }
+        .whatsapp-button a {
+            display: inline-block;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background-color: #25D366;
+            color: white;
+            text-align: center;
+            line-height: 55px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+        .whatsapp-button a:hover {
+            transform: scale(1.1);
+        }
+      .cart-icon  {
+          font-size: 1.5rem; /* Increase the size of the icon */
+          color: black;
+          margin-left: 20px; /* Add some space before the icon */
+      }
+     
+      
+    .card-title{
+      font-size: 0.7rem;
+            font-weight: bold;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+    }
+    .card{
+      border: none;
+      border-radius: 0px;
+    }
+
+    .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: green;
+            border-radius: 30%;
+           
+          }
+
+          .dropdown-item:hover,
+    .nav-link:hover {
+        color: green !important;
+    }
+    .dropdown-menu, .dropdown-item:hover{
+      background-color: #25d36500;
+    }
+
+    .dropdown-menu{
+      border: none;
+      border-radius: 0px;
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+    }
+   
+    .navbar{
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+    } 
+
+    .whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.whatsapp-button img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.whatsapp-button img:hover {
+    transform: scale(1.1);
+}
+
+        .input-search {
+            border: none;
+            outline: none; /* Remove the default outline */
+        }
+
+        .input-search:hover {
+            border: none; /* Ensure no border on hover */
+        }
+
+        .input-search:focus {
+            outline: none; /* Ensure no outline on focus */
+            box-shadow: none; /* Ensure no box shadow on focus */
+        }
+        .category-btn {
+            margin: 5px;
+        }
+        .btn-close:focus,
+        .btn-close:hover {
+            box-shadow: none;
+            outline: none;
+            border-color: transparent;
+        }    /* Hides the clear button in Chrome, Safari, Edge, Opera */
+        input[type="search"]::-webkit-search-cancel-button {
+            -webkit-appearance: none;
+            appearance: none;
+        }
+        
+        /* Hides the clear button in Firefox */
+        input[type="search"]::-moz-search-cancel-button {
+            -moz-appearance: none;
+            appearance: none;
+        }
+        
+        /* Hides the clear button in Internet Explorer */
+        input[type="search"]::-ms-clear {
+            display: none;
+            width: 0;
+            height: 0;
+        }
+       
+  </style>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+ <!--nav start-->
+ <nav class="navbar navbar-expand-lg sticky-top " style="background-color: white; height: 85px; ">
+  <div class="container-fluid">
+    <a class="navbar-brand text-" href="#">SneakersKu</a>
+    <button class="navbar-toggler bg-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+     <!-- Button trigger modal -->
+ <i class="bi bi-search me-2 ms-4" style="font-size: 1em;"></i>
+ <input type="search" class="input-search" data-bs-toggle="modal" data-bs-target="#exampleModal" placeholder="search any product" style="border: none;">
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active text-dark me-3" aria-current="page" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark me-3 btn btn-" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample" >information</a>
+        </li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-dark me-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            brands
+          </a>
+          <ul class="dropdown-menu bg-light" style="text-decoration: none;" >
+            <li><a class="dropdown-item text-dark" href="brands/nikepage.html">nike</a></li>
+            <li><a class="dropdown-item text-dark" href="#">adidas</a></li>
+            <li><a class="dropdown-item text-dark" href="#">asics</a></li>
+            <li><a class="dropdown-item text-dark" href="#">puma</a></li>
+            <li><a class="dropdown-item text-dark" href="#">new balance</a></li>
+            <li><a class="dropdown-item text-dark" href="#">salomon</a></li>
+            <li><a class="dropdown-item text-dark" href="#">converse</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="#"><i class="bi bi-cart-fill cart-icon me-5 "></i></a>
+        </li>
+        <li>
+          <a href="log/login.html"><button type="button" class="btn btn-outline-success me-3 ms-3 ">login</button></a>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</nav>
+<!--nav end-->
+
+<!--content-->
+<div class="container-fluid text-center bg-light text-dark" style="height: 200vh;">
+  <div id="carouselExampleIndicators" class="carousel slide pt-1 " style="width: 97%; margin: auto; ">
+    <div class="carousel-indicators bg-">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1" style="background-color: green;"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2" style="background-color: green;"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3" style="background-color: green;"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="img/iklan.png" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="img/3.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="img/20240717_124427.jpg" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev "  type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon " aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <div class="row align-items-center mt-5">
+    <div class="col-12 text-start mb-2">
+      <h2>recomended for you</h2>
+    </div>
+  </div>
+  <a href="brands/brands.html" style="text-decoration: none;">
+  <div class="row row-cols-1 row-cols-md-6 g-5" id="product-list">
+    <div class="col" data-aos="fade-up"
+    data-aos-duration="1000">
+      <div class="card h-10">
+        <img src="https://d5ibtax54de3q.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzM3NDMvZGE3MzdhZTYzYTMwMzUxN2VhZWQyMTgyMzBlYjYwMTMucG5nIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxNDAwfX19" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Adidas Samba OG</h5>
+          <p class="card-text opacity-75"> IDR 2,900,000</p>
+        </div>
+      </div>
+    </div>
+    </a>
+    <a href="brands/brands2.html" style="text-decoration: none;">
+    <div class="col" data-aos="fade-up"
+    data-aos-duration="1000"   data-aos-delay="100">
+      <div class="card h-10">
+      
+        <img src="https://d5ibtax54de3q.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzYzMjgzL2ZiYTM5NjU2ODEwMzRhNjUwNjc4NzE4YjIwNDBiZDRlLmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE0MDB9fX0=" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Nike Dunk Low Cacao </h5>
+          <p class="card-text opacity-75">IDR 1,100,000</p>
+        </div>
+      </div>
+    </div>
+  </a>
+  <a href="brands/brands3.html"style="text-decoration: none;">
+    <div class="col" data-aos="fade-up"
+    data-aos-duration="1000"   data-aos-delay="150">
+      <div class="card h-10">
+      
+        <img src="https://d5ibtax54de3q.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzEwNTMwNi9kOTMyYTM3YjEyMTUyNGIwYjRhMjA0ZjQwNWViMjQwOS5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE0MDB9fX0=" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Adidas Samba Nylon Wales Bonner Wonder Clay Royal </h5>
+          <p class="card-text opacity-75">IDR 3,800,000</p>
+        </div>
+      </div>
+    </div>
+  </a>
+  <a href="brands/brands4.html"style="text-decoration: none;">
+    <div class="col" data-aos="fade-up"
+    data-aos-duration="1000"   data-aos-delay="200">
+      <div class="card h-10">
+      
+        <img src="https://d5ibtax54de3q.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzUyNTIvYTdkMWM5YjdkNWYwMjkzZDkwYzlkOTMwYjhmYTE2NWQucG5nIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxNDAwfX19" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Nike Air Max Plus Triple Black </h5>
+          <p class="card-text opacity-75">IDR 2,200,000</p>
+        </div>
+      </div>
+    </div>
+  </a>
+  <a href="brands/brands5.html"style="text-decoration: none;">
+    <div class="col" data-aos="fade-up"
+    data-aos-duration="1000"   data-aos-delay="250">
+      <div class="card h-10">
+      
+        <img src="https://d5ibtax54de3q.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzY4Njk5LzdjMThlMjdmZWIzNjBjOGQ0ZGNlNzE2ZGZlMDQwZjJhLnBuZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTQwMH19fQ==" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Adidas Gazelle Indoor Collegiate Burgundy Arctic Fuchsia</h5>
+          <p class="card-text opacity-75">IDR 1,500,000</p>
+        </div>
+      </div>
+    </div>
+  </a>
+  <a href="brands/brands6.html"style="text-decoration: none;">
+    <div class="col" data-aos="fade-up"
+    data-aos-duration="1000"   data-aos-delay="300">
+      <div class="card h-10">
+      
+        <img src="https://d5ibtax54de3q.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzk4MTQ1LzYyZWRhOTcyNmRlNzdkZTU1ZjI3YTZhYTNhYmYyMzk3LnBuZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTQwMH19fQ==" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">ASICS Gel-1130 White Clay Canyon</h5>
+          <p class="card-text opacity-75">IDR 1,500,000</p>
+        </div>
+      </div>
+    </div>
+  </a>
+  <a href="brands/brands7.html"style="text-decoration: none;">
+    <div class="col"  data-aos="fade-up"
+    data-aos-duration="1000"   data-aos-delay="350">
+      <div class="card h-10">
+      
+        <img src="https://d5ibtax54de3q.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzU4MTYzLzM0Yjc3NzQxOGQzODVjZjVmMjBkMjQ3ODk0NzE2YjIxLmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE0MDB9fX0=" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Converse One Star Pro Ox Sean Pablo Rapid Teal </h5>
+          <p class="card-text opacity-75">IDR 1,700,000</p>
+        </div>
+      </div>
+    </div>
+  </a>
+  <a href="brands/brands8.html"style="text-decoration: none;">
+    <div class="col" data-aos="fade-up"
+    data-aos-duration="1000"   data-aos-delay="400">
+      <div class="card h-10">
+      
+        <img src="https://d5ibtax54de3q.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzc3MjE3LzMzZjBkYmNlNGQ3YTc4OTQyMzllOTU1ZTgzOWE0OGNkLnBuZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTQwMH19fQ==" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Nike SB Dunk Low The Powerpuff Girls Bubbles </h5>
+          <p class="card-text opacity-75">IDR 5,000,000</p>
+        </div>
+      </div>
+    </div>
+  </a>
+  <a href="brands/brands9.html"style="text-decoration: none;">
+    <div class="col" data-aos="fade-up"
+    data-aos-duration="1000"   data-aos-delay="500">
+      <div class="card h-10">
+       
+        <img src="https://d5ibtax54de3q.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzM2NTExLzRlMjNhYjhmYTIzZDQ1OTlhZmFjNWJmNTE0ZDI2NjZiLnBuZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTQwMH19fQ==" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">New Balance 1906R White Gold</h5>
+          <p class="card-text opacity-75">IDR 1,950,000</p>
+        </div>
+      </div>
+    </div>
+  </a>
+  <a href="brands/brands10.html"style="text-decoration: none;">
+    <div class="col" data-aos="fade-up"
+    data-aos-duration="1000"   data-aos-delay="550">
+      <div class="card h-10">
+      
+        <img src="https://d5ibtax54de3q.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzYyMjkxL2VjMzkxNmFkMzU1OTk1OTc4MmVlZjM0MWFkMjNhYjE4LmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE0MDB9fX0=" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Nike Zoom GT Cut 2 We Are All Greater</h5>
+          <p class="card-text opacity-75">IDR 2,560,000</p>
+        </div>
+      </div>
+    </div>
+  </a>
+  <a href="brands/brands11.html"style="text-decoration: none;">
+    <div class="col" data-aos="fade-up"
+    data-aos-duration="1000"   data-aos-delay="600">
+      <div class="card h-10">
+      
+        <img src="https://d5ibtax54de3q.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzY0MTQ2LzNlZDdjMzQ0OWFjZDVlMTNmNDhmZjU5MTI1ZTEzMDZlLmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE0MDB9fX0=" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">ASICS Gel-Kayano 14 Cream Black Metallic Plum </h5>
+          <p class="card-text opacity-75">IDR 2,550,000</p>
+        </div>
+      </div>
+    </div>
+  </a>
+  <a href="brands/brands12.html" style="text-decoration: none;">
+    <div class="col" data-aos="fade-up"
+    data-aos-duration="1000"   data-aos-delay="650">
+      <div class="card h-10">
+      
+        <img src="https://d5ibtax54de3q.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzEwNDExMi8zYjQyZmJjMjIwNzc1Mjg2YTk4MThhNDhiMTU2N2QwNy5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE0MDB9fX0=" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"> Converse Chuck Taylor All Star 70 Ox Golf le Fleur Digital Leopard Tan</h5>
+          <p class="card-text opacity-75">IDR 2,700,000</p>
+        </div>
+      </div>
+    </div>
+  </a>
+  </div>
+
+ <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content">
+      <div class="modal-header ms-3 me-3">
+        <i class="bi bi-search" style="font-size: 1em;"></i>
+        <input type="search" placeholder="search any product" class="search-input input-search ms-3" style="border: none; width: 1200px;">
+
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="font-size: 0.7em;"></button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+              <div class="col-12">
+                  <button class="btn btn-outline-success category-btn">Browse All</button>
+                  <button class="btn btn-outline-success category-btn">Grail Collection</button>
+                  <button class="btn btn-outline-success category-btn">Adidas Yeezy</button>
+                  <button class="btn btn-outline-success category-btn">Adidas Samba</button>
+                  <button class="btn btn-outline-success category-btn">Adidas Gazelle</button>
+                  <button class="btn btn-outline-success category-btn">Adidas KITH</button>
+                  <button class="btn btn-outline-success category-btn">Adidas Spezial</button>
+                  <button class="btn btn-outline-success category-btn">Adidas Campus</button>
+                  <button class="btn btn-outline-success category-btn">Adidas Others</button>
+                  <button class="btn btn-outline-success category-btn">Nike Dunk</button>
+                  <button class="btn btn-outline-success category-btn">Nike Air Max</button>
+                  <button class="btn btn-outline-success category-btn">Nike Air Force</button>
+                  <button class="btn btn-outline-success category-btn">Nike Air Jordan Low</button>
+                  <button class="btn btn-outline-success category-btn">Nike Air Jordan Mid</button>
+                  <button class="btn btn-outline-success category-btn">Nike Air Jordan High</button>
+                  <button class="btn btn-outline-success category-btn">Nike Zoom Vomero</button>
+                  <button class="btn btn-outline-success category-btn">Nike P6000</button>
+                  <button class="btn btn-outline-success category-btn">Nike Sacai</button>
+                  <button class="btn btn-outline-success category-btn">Nike Blazer</button>
+                  <button class="btn btn-outline-success category-btn">Nike Cortez</button>
+                  <button class="btn btn-outline-success category-btn">Nike Others</button>
+                  <button class="btn btn-outline-success category-btn">New Balance 550</button>
+                  <button class="btn btn-outline-success category-btn">New Balance 530</button>
+                  <button class="btn btn-outline-success category-btn">New Balance 990</button>
+                  <button class="btn btn-outline-success category-btn">New Balance 991</button>
+                  <button class="btn btn-outline-success category-btn">New Balance 327</button>
+                  <button class="btn btn-outline-success category-btn">New Balance 2002R</button>
+                  <button class="btn btn-outline-success category-btn">New Balance 1906</button>
+                  <button class="btn btn-outline-success category-btn">New Balance Others</button>
+                  <button class="btn btn-outline-success category-btn">Asics</button>
+                  <button class="btn btn-outline-success category-btn">Salomon</button>
+                  <button class="btn btn-outline-success category-btn">On Cloud</button>
+                  <button class="btn btn-outline-success category-btn">Hoka</button>
+                  <button class="btn btn-outline-success category-btn">Converse CDG Play</button>
+                  <button class="btn btn-outline-success category-btn">Slide & Sandal</button>
+                  <button class="btn btn-outline-success category-btn">Kids Collection Anak</button>
+                  <button class="btn btn-outline-success category-btn">Ricky Is Clown RIC</button>
+                  <button class="btn btn-outline-success category-btn">VTMT</button>
+              </div>
+          </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--off canvas-->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">information</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <hr>
+    <div class="offcanvas-body text-start ">
+      <div>
+      <p> ini website dibuat menggunakan bootstrap v5.3, dan tujuan web ini dibuat hanya untuk portofolio </p>
+       <hr>
+       <p>social media dev :</p>
+       <div>
+        <a href="https://www.instagram.com/rasyandty/" style="text-decoration: none; color: #25D366; display: flex;">
+       <i class="bi bi-instagram"></i>
+       <p class="ms-2">@rasyandty</p>
+      </a>
+      </div>
+      <div style="margin-top: -15px;">
+        <a href="https://x.com/RaxzFx" style="text-decoration: none; color: #25D366; display: flex;" >
+          <i class="bi bi-twitter-x"></i>
+          <p class="ms-2">@raxzfx</p>
+        </a>
+      </div>
+      <div style="margin-top: -15px;">
+        <a href="https://www.youtube.com/@rasyaajg" style="text-decoration: none; color: #25D366; display: flex;">
+          <i class="bi bi-youtube"></i>
+          <p class="ms-2">rakjet</p>
+        </a>
+      </div>
+      <hr>
+      <p>jika anda berkesan untuk menyalurkan donasi bisa klik link di bawah</p>
+      <a href="https://saweria.co/rasyanazra" style="text-decoration: none; color: #25D366;">saweria</a>
+      </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="offcanvas offcanvas-end" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="staticBackdropLabel">RasyStuff</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div>
+        <a class="nav-link active text-dark me-3" aria-current="page" href="index.html">Home</a> 
+        <hr>
+        <a class="nav-link text-dark me-3 text-start" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample" >information</a>
+        <hr>
+        <a class="nav-link dropdown-toggle text-dark me-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          brands
+        </a>
+        <ul class="dropdown-menu bg-light" >
+          <li><a class="dropdown-item text-dark" href="#">Action</a></li>
+          <li><a class="dropdown-item text-dark" href="#">Another action</a></li>
+        </ul>
+        <hr>
+        <i class="bi bi-cart-dash-fill cart-icon ms-1 me-1 "></i>keranjang belanja  
+        <hr>
+        <br><br><br><br><br><br>
+        <a href="log/login.html"><button type="button" class="btn btn-outline-success me-3 ms-3 " style="width: 340px;">login</button></a>
+      </div>
+    </div>
+  </div>
+
+
+  
+  <!--footer start-->
+  <footer class="footer mt-  bg-success " style="height: 250px;">
+    <div class="container p-5">
+      <div class="row">
+        <div class="col-md-4 ">
+          <h5 style="color: white;">Official store</h5>
+          <ul class="list-unstyled" style="text-decoration: none; ">
+            <li><a href="#" style="text-decoration: none; color: white;"> <i class="bi bi-shop"></i> Bandung</a></li>
+            <li><a href="#" style="text-decoration: none; color: white;"> <i class="bi bi-shop"></i> Jakarta</a></li>
+            <li><a href="#" style="text-decoration: none; color: white;"> <i class="bi bi-shop"></i> Yogyakarta</a></li>
+            <li><a href="#" style="text-decoration: none; color: white;"> <i class="bi bi-shop"></i> Bekasi</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h5 style="color: white;">Contact Us</h5>
+          <ul class="list-unstyled">
+            <li><a href="tel:+1234567890" style="text-decoration: none; color: white;">Phone: +62 896 2780 8306</a></li>
+            <li><a href="mailto:info@example.com" style="text-decoration: none; color: white;">Email: kosongkanlemari@gmail.com</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h5 style="color: white;">Follow Us</h5>
+          <div class="social-icons">
+            <a href="#" style="color: white;"><i class="bi bi-tiktok me-2"></i></a>
+            <a href="#" style="color: white;"><i class="bi bi-twitter me-2"></i></a>
+            <a href="#" style="color: white;"><i class="bi bi-instagram me-2"></i></a>
+            <a href="#" style="color: white;"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!--footer end-->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true
+    });
+    
+  </script>
+</body>
+</html>
